@@ -11,8 +11,9 @@ import CoreData
 import CoreLocation
 import CoreBluetooth
 
-class CustomWebViewController: UIViewController {
+class CustomWebViewController: UIViewController, BeaconScannerDelegate{
     
+    var beaconScanner: BeaconScanner!
 
     let minorURL = [44176:"https://www.facebook.com", 33662 : "www.freescale.com"]
     
@@ -65,6 +66,12 @@ class CustomWebViewController: UIViewController {
         let url = NSURL (string: "https://www.google.com");
         let requestObj = NSURLRequest(URL: url!);
         webView.loadRequest(requestObj);
+        
+        
+        //EDDYSTONE
+        self.beaconScanner = BeaconScanner()
+        self.beaconScanner!.delegate = self
+        self.beaconScanner!.startScanning()
         
         
         //Test
@@ -125,8 +132,17 @@ class CustomWebViewController: UIViewController {
     }
     
     
-    // MARK: Beacon stuff
-    
+    // MARK: EDDYSTONE stuff
+    func didFindBeacon(beaconScanner: BeaconScanner, beaconInfo: BeaconInfo) {
+        NSLog("FIND: %@", beaconInfo.description)
+    }
+    func didLoseBeacon(beaconScanner: BeaconScanner, beaconInfo: BeaconInfo) {
+        
+    }
+    func didUpdateBeacon(beaconScanner: BeaconScanner, beaconInfo: BeaconInfo) {
+        NSLog("UPDATE: %@", beaconInfo.description)
+    }
+
     
     
     

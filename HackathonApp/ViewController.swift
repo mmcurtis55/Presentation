@@ -11,8 +11,7 @@ import UIKit
 let reuseIdentifier = "Cell"
 
 
-class ViewController: UICollectionViewController {
-    
+class ViewController: UICollectionViewController{
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
 

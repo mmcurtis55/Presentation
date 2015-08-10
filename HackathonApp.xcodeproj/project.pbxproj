@@ -18,6 +18,9 @@
 		5A096E661B6FE619009C1AFA /* CustomWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A096E651B6FE619009C1AFA /* CustomWebViewController.swift */; };
 		5AE618FB1B73BC12007D17CE /* menuItems.json in Resources */ = {isa = PBXBuildFile; fileRef = 5AE618FA1B73BC12007D17CE /* menuItems.json */; };
 		5AE619071B73E235007D17CE /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE619061B73E235007D17CE /* MenuItem.swift */; };
+		5AE846FC1B794FA8003FB8CB /* Eddystone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE846F91B794FA8003FB8CB /* Eddystone.swift */; };
+		5AE846FD1B794FA8003FB8CB /* BeaconScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE846FA1B794FA8003FB8CB /* BeaconScanner.swift */; };
+		5AE846FE1B794FA8003FB8CB /* DispatchTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE846FB1B794FA8003FB8CB /* DispatchTimer.swift */; };
 		5AEDED5B1B75207700760B4A /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AEDED591B750FAA00760B4A /* CoreBluetooth.framework */; };
 		5AEDED5C1B75208200760B4A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AEDED571B750F9F00760B4A /* CoreLocation.framework */; };
 		5AEDED5D1B75208800760B4A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF20F761B740EDA005DA45F /* QuartzCore.framework */; };
@@ -56,6 +59,9 @@
 		5AE618FA1B73BC12007D17CE /* menuItems.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = menuItems.json; sourceTree = "<group>"; };
 		5AE619061B73E235007D17CE /* MenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuItem.swift; path = ../MenuItem.swift; sourceTree = "<group>"; };
 		5AE619081B73EA8B007D17CE /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		5AE846F91B794FA8003FB8CB /* Eddystone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Eddystone.swift; sourceTree = "<group>"; };
+		5AE846FA1B794FA8003FB8CB /* BeaconScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconScanner.swift; sourceTree = "<group>"; };
+		5AE846FB1B794FA8003FB8CB /* DispatchTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchTimer.swift; sourceTree = "<group>"; };
 		5AEDED571B750F9F00760B4A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		5AEDED591B750FAA00760B4A /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		5AEDED601B7526B700760B4A /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -132,6 +138,9 @@
 		5A096E3C1B6FC16C009C1AFA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5AE846F91B794FA8003FB8CB /* Eddystone.swift */,
+				5AE846FA1B794FA8003FB8CB /* BeaconScanner.swift */,
+				5AE846FB1B794FA8003FB8CB /* DispatchTimer.swift */,
 				5A096E641B6FE1CA009C1AFA /* HackathonApp-Bridging-Header.h */,
 				5A096E611B6FC930009C1AFA /* SWRevealViewController.h */,
 				5A096E621B6FC930009C1AFA /* SWRevealViewController.m */,
@@ -261,10 +270,13 @@
 			files = (
 				5A096E441B6FC171009C1AFA /* ViewController.swift in Sources */,
 				5A096E3F1B6FC16D009C1AFA /* AppDelegate.swift in Sources */,
+				5AE846FD1B794FA8003FB8CB /* BeaconScanner.swift in Sources */,
 				5A096E421B6FC171009C1AFA /* HackathonApp.xcdatamodeld in Sources */,
+				5AE846FC1B794FA8003FB8CB /* Eddystone.swift in Sources */,
 				5AEDED611B7526B700760B4A /* UIColorExtension.swift in Sources */,
 				5AF20F751B740880005DA45F /* CollectionViewCell.swift in Sources */,
 				5AE619071B73E235007D17CE /* MenuItem.swift in Sources */,
+				5AE846FE1B794FA8003FB8CB /* DispatchTimer.swift in Sources */,
 				5A096E631B6FC930009C1AFA /* SWRevealViewController.m in Sources */,
 				5A096E661B6FE619009C1AFA /* CustomWebViewController.swift in Sources */,
 			);
