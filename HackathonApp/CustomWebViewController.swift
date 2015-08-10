@@ -13,6 +13,13 @@ import CoreBluetooth
 
 class CustomWebViewController: UIViewController {
     
+
+    let minorURL = [44176:"https://www.facebook.com", 33662 : "www.freescale.com"]
+    
+    //Test
+    let locationManager = CLLocationManager()
+    let region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "F7826DA6-4FA2-4E98-8024-BC5B71E0893E"), identifier: "OHT-FSL")
+    
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var bookmarkButton: UIToolbar!
@@ -59,6 +66,16 @@ class CustomWebViewController: UIViewController {
         let requestObj = NSURLRequest(URL: url!);
         webView.loadRequest(requestObj);
         
+        
+        //Test
+        locationManager.delegate = self;
+        locationManager.requestWhenInUseAuthorization()
+        
+        if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.AuthorizedWhenInUse) {
+            locationManager.requestWhenInUseAuthorization()
+        }
+        locationManager.startRangingBeaconsInRegion(region)
+        
         //Beacon stuff
         if locManager != nil {
             locMan = locManager!
@@ -66,6 +83,7 @@ class CustomWebViewController: UIViewController {
         }
 
     }
+    
     
     // Mark - UIView Lifecycle
     
@@ -141,6 +159,11 @@ extension CustomWebViewController: CLLocationManagerDelegate {
             "UUID: \(beacon.proximityUUID.UUIDString)"
             println("open map for \(detailLabel)")
             
+            
+            let url = NSURL (string: "https://facebook.com");
+            let requestObj = NSURLRequest(URL: url!);
+            webView.loadRequest(requestObj);
+            
             beaconLabel.text = "E3"
         case 23996:
             let detailLabel:String = "Major: \(beacon.major.integerValue), " +
@@ -157,6 +180,10 @@ extension CustomWebViewController: CLLocationManagerDelegate {
                 "RSSI: \(beacon.rssi as Int), " +
             "UUID: \(beacon.proximityUUID.UUIDString)"
             println("open map for \(detailLabel)")
+            
+            let url = NSURL (string: "https://freescale.com");
+            let requestObj = NSURLRequest(URL: url!);
+            webView.loadRequest(requestObj);
             
             beaconLabel.text = "W1"
             

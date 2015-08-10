@@ -77,7 +77,9 @@
                         <barButtonItem key="leftBarButtonItem" image="menu" id="hto-0L-JgS"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="beaconLabel" destination="a8V-kW-rsc" id="scz-3R-QRF"/>
                         <outlet property="bookmarkButton" destination="v9Z-fu-PkH" id="eFL-si-W1c"/>
+                        <outlet property="clMessage" destination="FnD-YW-9zV" id="v8r-ei-PdB"/>
                         <outlet property="menuButton" destination="hto-0L-JgS" id="KMQ-EE-m7I"/>
                         <outlet property="testBeaconLabel" destination="O67-eo-th1" id="4dh-5e-Xeg"/>
                         <outlet property="webView" destination="kod-G3-8HN" id="Ft1-Dj-Qhx"/>
