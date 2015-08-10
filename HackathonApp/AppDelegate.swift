@@ -55,6 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,CLLocationManagerDelegate 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // TODO: read bundle based on user defined macro
         
+        
         // Override point for customization after application launch.
         // Register the preference defaults early.
         if let bundle = NSBundle.mainBundle().pathForResource("Config", ofType: "plist") {
