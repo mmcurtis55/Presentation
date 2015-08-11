@@ -12,6 +12,8 @@
 	<dict>
 		<key>6D02B7FE6906005B4825330BD13425D7CE08926E</key>
 		<string>https://github.com/mmcurtis55/Presentation.git</string>
+		<key>C41AAFC207AB2031DA7D73EDD590362EC22AF60B</key>
+		<string>http://svn.freescale.net/svn/it-mobile</string>
 		<key>bc1a0ddd-8d80-4e87-b932-dfdd329fea05++3490</key>
 		<string>http://svn.freescale.net/svn/it-mobile/Hackathon2015/iOS/HackathonApp</string>
 	</dict>
@@ -21,6 +23,8 @@
 	<dict>
 		<key>6D02B7FE6906005B4825330BD13425D7CE08926E</key>
 		<string>../..</string>
+		<key>C41AAFC207AB2031DA7D73EDD590362EC22AF60B</key>
+		<string>../../..</string>
 		<key>bc1a0ddd-8d80-4e87-b932-dfdd329fea05++3490</key>
 		<string>../../..</string>
 	</dict>
@@ -41,7 +45,7 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>bc1a0ddd-8d80-4e87-b932-dfdd329fea05++3490</string>
+			<string>C41AAFC207AB2031DA7D73EDD590362EC22AF60B</string>
 			<key>IDESourceControlWCCName</key>
 			<string></string>
 		</dict>

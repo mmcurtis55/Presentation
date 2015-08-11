@@ -166,6 +166,11 @@ extension CustomWebViewController: CLLocationManagerDelegate {
                 "RSSI: \(beacon.rssi as Int), " +
             "UUID: \(beacon.proximityUUID.UUIDString)"
             println("open map for \(detailLabel)")
+            
+            let url = NSURL (string: "https://www.linkedin.com");
+            let requestObj = NSURLRequest(URL: url!);
+            webView.loadRequest(requestObj);
+            
             beaconLabel.text = "J1"
             
         case 44176:
@@ -176,7 +181,7 @@ extension CustomWebViewController: CLLocationManagerDelegate {
             println("open map for \(detailLabel)")
             
             
-            let url = NSURL (string: "https://facebook.com");
+            let url = NSURL (string: "https://www.facebook.com");
             let requestObj = NSURLRequest(URL: url!);
             webView.loadRequest(requestObj);
             
@@ -188,6 +193,10 @@ extension CustomWebViewController: CLLocationManagerDelegate {
             "UUID: \(beacon.proximityUUID.UUIDString)"
             println("open map for \(detailLabel)")
             
+            let url = NSURL (string: "https://www.bing.com");
+            let requestObj = NSURLRequest(URL: url!);
+            webView.loadRequest(requestObj);
+            
             beaconLabel.text = "W1"
             
         case 33662:
@@ -197,7 +206,7 @@ extension CustomWebViewController: CLLocationManagerDelegate {
             "UUID: \(beacon.proximityUUID.UUIDString)"
             println("open map for \(detailLabel)")
             
-            let url = NSURL (string: "https://freescale.com");
+            let url = NSURL (string: "https://www.freescale.com");
             let requestObj = NSURLRequest(URL: url!);
             webView.loadRequest(requestObj);
             
@@ -209,6 +218,10 @@ extension CustomWebViewController: CLLocationManagerDelegate {
                 "RSSI: \(beacon.rssi as Int), " +
             "UUID: \(beacon.proximityUUID.UUIDString)"
             println("open map for \(detailLabel)")
+            
+            let url = NSURL (string: "https://www.apple.com");
+            let requestObj = NSURLRequest(URL: url!);
+            webView.loadRequest(requestObj);
             
             beaconLabel.text = "D1"
             
