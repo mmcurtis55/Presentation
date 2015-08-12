@@ -326,7 +326,7 @@ extension CustomWebViewController: CLLocationManagerDelegate {
 
     
     func nearestBeaconChanged(nearestBeacon: CLBeacon) {
-        HTTPSRequest()
+        HTTPSRequest(nearestBeacon.major.integerValue, minor: nearestBeacon.minor.integerValue)
         lastBeacon = nearestBeacon
         //set nil to allow lastBeacon != lastBeaconDisplayed  to be true
         lastBeaconDisplayed = nil
@@ -403,20 +403,17 @@ extension CustomWebViewController: CLLocationManagerDelegate {
     
     //MARK: - HTTPS request
     
-    func HTTPSRequest(){
-    
-    let url = NSURL(string: "https://grails-leomejia.rhcloud.com/bleanalytics/api/beacon?uuid=F7826DA6-4FA2-4E98-8024-BC5B71E0893E&major=213&minor=123")
-    
-    let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
-        println(NSString(data: data, encoding: NSUTF8StringEncoding))
+    func HTTPSRequest(major:Int, minor:Int){
+        
+        let url = NSURL(string: "https://grails-leomejia.rhcloud.com/bleanalytics/api/beacon?uuid=F7826DA6-4FA2-4E98-8024-BC5B71E0893E&major=\(major)&minor=\(minor)")
+            
+            let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
+                println(NSString(data: data, encoding: NSUTF8StringEncoding))
+            }
+            
+            task.resume()
+
     }
-    
-    task.resume()
-}
-
-
-
-
 
 
 
