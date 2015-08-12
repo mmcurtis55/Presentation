@@ -92,7 +92,8 @@ class CustomWebViewController: UIViewController, BeaconScannerDelegate{
     }
     
     
-    // Mark - UIView Lifecycle
+    //MARK:  - UIView Lifecycle
+    
     
     override func viewWillAppear(animated: Bool) {
         locMan!.delegate = self
@@ -126,13 +127,13 @@ class CustomWebViewController: UIViewController, BeaconScannerDelegate{
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: Saving links
+    // MARK: - Saving links
     @IBAction func bookmarkURL(sender:UIBarButtonItem){
         println("bookmarked")
     }
     
     
-    // MARK: EDDYSTONE stuff
+    // MARK: - EDDYSTONE stuff
     func didFindBeacon(beaconScanner: BeaconScanner, beaconInfo: BeaconInfo) {
         NSLog("FIND: %@", beaconInfo.description)
     }
@@ -150,8 +151,9 @@ class CustomWebViewController: UIViewController, BeaconScannerDelegate{
 
 
 }
+// MARK: - iBeacon Methods
 extension CustomWebViewController: CLLocationManagerDelegate {
-    // MARK: Web
+    
 
     // updateUI(beacon: CLBeacon)
     
@@ -319,11 +321,12 @@ extension CustomWebViewController: CLLocationManagerDelegate {
     
     func nearestBeaconDidChange() -> Bool{
         return lastBeacon != lastBeaconDisplayed
-        
     }
     
+
     
     func nearestBeaconChanged(nearestBeacon: CLBeacon) {
+        HTTPSRequest()
         lastBeacon = nearestBeacon
         //set nil to allow lastBeacon != lastBeaconDisplayed  to be true
         lastBeaconDisplayed = nil
@@ -397,4 +400,25 @@ extension CustomWebViewController: CLLocationManagerDelegate {
     }
     
     
+    
+    //MARK: - HTTPS request
+    
+    func HTTPSRequest(){
+    
+    let url = NSURL(string: "https://grails-leomejia.rhcloud.com/bleanalytics/api/beacon?uuid=F7826DA6-4FA2-4E98-8024-BC5B71E0893E&major=213&minor=123")
+    
+    let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
+        println(NSString(data: data, encoding: NSUTF8StringEncoding))
+    }
+    
+    task.resume()
+}
+
+
+
+
+
+
+
+
 }
